@@ -1,0 +1,6 @@
+
+> florma-3d-audit@0.1.0 build
+> tsc && node scripts/verify-init-script.mjs
+
+Page instrumentation verified: self-contained, installs its API, and returns JSON-serialisable telemetry.
+ACTOR_BUILD_EXIT=0

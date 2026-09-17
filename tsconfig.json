@@ -17,5 +17,14 @@
     "paths": { "@/*": ["./*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  // `actors/` is a standalone npm + TypeScript project with its own tsconfig.json,
+  // node_modules and build script - see actors/florma-3d-audit/.actor/README.md.
+  // Its deps (playwright, apify, the MCP SDK) are installed only inside
+  // actors/florma-3d-audit/node_modules, and that folder is gitignored, so they
+  // are absent on a fresh clone or CI. Without this exclude, `**/*.ts` swept the
+  // Actor sources into the Next.js program and `next build` failed on a fresh
+  // clone with "Cannot find module 'playwright'"; it also pulled the Actor's
+  // whole nested node_modules (1000+ .d.ts files) into every app type-check,
+  // because "node_modules" below only excludes the repo-root one.
+  "exclude": ["node_modules", "**/node_modules", "actors"]
 }

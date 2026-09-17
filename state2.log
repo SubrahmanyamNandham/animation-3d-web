@@ -1,0 +1,39 @@
+﻿
+Mode   Name                Length
+----   ----                ------
+d----- .actor                    
+d----- dist                      
+d----- node_modules.hidden       
+d----- scripts                   
+d----- src                       
+d----- storage                   
+-a---- .dockerignore       263   
+-a---- .gitignore          300   
+-a---- build.out.txt       86    
+-a---- build2.out.txt      1128  
+-a---- out_build.txt       378   
+-a---- out_run.txt         10268 
+-a---- out_tsc.txt         0     
+-a---- out_verify.txt      216   
+-a---- package-lock.json   125170
+-a---- package.json        819   
+-a---- probe-cjs.cjs       556   
+-a---- probe-cjs.out.txt   190   
+-a---- probe-esm.mjs       538   
+-a---- probe-esm.out.txt   188   
+-a---- run.out.txt         7610  
+-a---- run2.out.txt        11172 
+-a---- tsc.out.txt         0     
+-a---- tsconfig.json       962   
+-a---- verify-old.out.txt  976   
+
+
+
+   Id StartTime          
+   -- ---------          
+ 8532 17-09-2026 21:33:23
+12632 17-09-2026 21:33:19
+14232 17-09-2026 21:34:07
+17164 17-09-2026 21:34:09
+
+

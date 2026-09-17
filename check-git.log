@@ -1,0 +1,19 @@
+﻿ M README.md
+ M tsconfig.json
+?? app-files.log
+?? build-tail.log
+?? check-actor-build.log
+?? check-actor-tsc.log
+?? check-files.log
+?? check-git.log
+?? check-next-build.log
+?? check-nodeps-tsc.log
+?? check-tsc.log
+?? restore.log
+?? sim-ci.log
+?? sim-files.log
+?? sim-tsc.log
+?? state1.log
+?? state2.log
+?? tsc-ci-sim.log
+?? tsc-root.log

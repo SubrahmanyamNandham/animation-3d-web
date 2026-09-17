@@ -1,0 +1,20 @@
+﻿../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(1,36): error TS2307: Cannot find module 'playwright' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(2,21): error TS2307: Cannot find module 'apify' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(38,25): error TS7006: Parameter 'error' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(41,29): error TS7006: Parameter 'request' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(103,24): error TS7006: Parameter 'frame' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(115,35): error TS7006: Parameter 'result' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(122,30): error TS7006: Parameter 'frame' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/audit.ts(137,28): error TS7006: Parameter 'snapshot' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/browser.ts(1,40): error TS2307: Cannot find module 'playwright' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/browser.ts(2,17): error TS2307: Cannot find module '@apify/log' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/deliver.ts(1,24): error TS2307: Cannot find module '@modelcontextprotocol/sdk/client/index.js' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/deliver.ts(2,47): error TS2307: Cannot find module '@modelcontextprotocol/sdk/client/streamableHttp.js' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/deliver.ts(3,21): error TS2307: Cannot find module 'apify' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/deliver.ts(44,16): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+../../../AppData/Local/Temp/florma-ci-sim/src/deliver.ts(59,43): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+../../../AppData/Local/Temp/florma-ci-sim/src/deliver.ts(97,32): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/main.ts(1,28): error TS2307: Cannot find module 'apify' or its corresponding type declarations.
+../../../AppData/Local/Temp/florma-ci-sim/src/main.ts(30,11): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+../../../AppData/Local/Temp/florma-ci-sim/src/main.ts(31,14): error TS7006: Parameter 'url' implicitly has an 'any' type.
+---done---
