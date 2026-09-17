@@ -18,6 +18,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# Any other scratch log (build / type-check output captured by tooling).
+# Without this, throwaway logs created while debugging a build get committed by
+# a blanket `git add -A` and have to be deleted again afterwards.
+*.log
 
 # local env files
 .env*.local

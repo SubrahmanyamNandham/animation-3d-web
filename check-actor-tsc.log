@@ -1,5 +1,0 @@
-
-> florma-3d-audit@0.1.0 typecheck
-> tsc --noEmit
-
-ACTOR_TSC_EXIT=0
