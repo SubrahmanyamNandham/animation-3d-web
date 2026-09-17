@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    // `module: node16` (not `commonjs`) is required to pair with
+    // `moduleResolution: node16` - TypeScript rejects that combination (TS5110).
+    // package.json stays `"type": "commonjs"`, so this still emits CommonJS,
+    // while resolution honours package `exports` maps. That matters here: the
+    // MCP SDK is `"type": "module"` and only exposes its paths through exports,
+    // so classic (`node10`) resolution cannot find `client/index.js` at all.
+    "module": "node16",
+    "moduleResolution": "node16",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": false,
+    "sourceMap": false
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

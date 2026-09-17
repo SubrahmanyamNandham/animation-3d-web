@@ -1,0 +1,10 @@
+# This Actor is its own npm project inside the florma repo. Its dependencies
+# (apify, playwright, the MCP SDK) must not be installed by the Next.js app,
+# and the Next.js app's node_modules must not be copied into the Actor build.
+node_modules
+dist
+storage
+apify_storage
+.env
+.env.*
+*.log

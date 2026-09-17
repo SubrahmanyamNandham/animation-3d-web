@@ -1,0 +1,12 @@
+# Keep the build context small. Node deps are installed inside the image by
+# the Apify base image's own `npm ci` step, so node_modules must not be copied.
+node_modules
+dist
+storage
+apify_storage
+.env
+.env.*
+.git
+.gitignore
+*.log
+tsconfig.tsbuildinfo

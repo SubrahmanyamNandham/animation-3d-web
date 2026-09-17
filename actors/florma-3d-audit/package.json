@@ -1,0 +1,26 @@
+{
+  "name": "florma-3d-audit",
+  "version": "0.1.0",
+  "description": "Audits a page for real WebGL/3D telemetry (contexts, GPU limits, draw calls, frame timing, 3D asset weight) and can deliver the report through an MCP connector.",
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "npm run build && node dist/main.js",
+    "build": "tsc && node scripts/verify-init-script.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify-init-script.mjs",
+    "audit": "npm run build && node dist/main.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "apify": "^3.7.2",
+    "playwright": "^1.63.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

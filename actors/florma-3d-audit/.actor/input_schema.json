@@ -1,0 +1,113 @@
+{
+  "title": "3D / WebGL page audit",
+  "description": "Runs a page in headless Chromium with injected instrumentation and reports what the page actually does with WebGL: contexts created, GPU capability limits, draw-call counts, frame timing, context-loss events, and the weight of 3D assets. Optionally delivers the report through an MCP connector.",
+  "type": "object",
+  "schemaVersion": 1,
+  "required": ["startUrls"],
+  "properties": {
+    "startUrls": {
+      "title": "Pages to audit",
+      "description": "Public HTTP(S) URLs to audit. Actor URLs cannot reach localhost - use a deployed or tunnelled URL.",
+      "type": "array",
+      "editor": "requestListSources",
+      "prefill": [{ "url": "https://threejs.org" }],
+      "items": {
+        "title": "Page",
+        "type": "object",
+        "properties": {
+          "url": { "title": "URL", "type": "string" }
+        },
+        "required": ["url"]
+      }
+    },
+    "sampleSeconds": {
+      "title": "Frame sampling window (seconds)",
+      "description": "How long to sample requestAnimationFrame deltas per page. Longer is more stable but costs runtime. The resulting frame timing is NOT representative of real GPU performance when Chromium falls back to software rendering (see the renderer string in the output).",
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 30
+    },
+    "settleMs": {
+      "title": "Settle time before sampling (ms)",
+      "description": "Wait this long after the load event, so late-mounting canvases and their first frames are captured.",
+      "type": "integer",
+      "default": 3000,
+      "minimum": 0,
+      "maximum": 30000
+    },
+    "viewportWidth": {
+      "title": "Viewport width (px)",
+      "type": "integer",
+      "default": 1440,
+      "minimum": 320
+    },
+    "viewportHeight": {
+      "title": "Viewport height (px)",
+      "type": "integer",
+      "default": 900,
+      "minimum": 240
+    },
+    "deviceScaleFactor": {
+      "title": "Device scale factor",
+      "description": "Higher values multiply the canvas backing-store size and therefore the fill-rate cost.",
+      "type": "number",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 4
+    },
+    "assetExtensions": {
+      "title": "3D asset extensions",
+      "description": "Network requests ending in these extensions are reported as 3D/immersive asset weight.",
+      "type": "array",
+      "default": [
+        ".glb",
+        ".gltf",
+        ".ktx2",
+        ".basis",
+        ".drc",
+        ".bin",
+        ".obj",
+        ".fbx",
+        ".usdz",
+        ".hdr",
+        ".exr",
+        ".mp4",
+        ".webm"
+      ],
+      "items": { "type": "string" }
+    },
+    "navigationTimeoutSecs": {
+      "title": "Navigation timeout (seconds)",
+      "type": "integer",
+      "default": 60,
+      "minimum": 5
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "description": "Optional. Only needed if the target site blocks datacenter IPs.",
+      "type": "object",
+      "editor": "proxy"
+    },
+    "reportConnector": {
+      "title": "Report destination (MCP connector)",
+      "description": "Optional. The MCP connector the finished report is delivered through. The Actor connects to it via the Apify MCP proxy and can only call tools declared by this Actor.",
+      "type": "string",
+      "resourceType": "mcpConnector",
+      "mcpServers": [{ "url": "*" }]
+    },
+    "deliveryTool": {
+      "title": "Tool to call on the connector",
+      "description": "Exact MCP tool name, for example 'create_page' (Notion) or 'send_message' (Slack). Leave empty to only list the connector's available tools into the run's key-value store without sending anything - useful for discovering which tool you want.",
+      "type": "string",
+      "default": ""
+    },
+    "deliveryArguments": {
+      "title": "Arguments passed to the tool",
+      "description": "JSON object used as the tool's arguments. Any string value may reference these placeholders: {{reportMarkdown}}, {{reportJson}}, {{requestedUrl}}, {{verdict}}.",
+      "type": "object",
+      "editor": "json",
+      "default": {}
+    }
+  }
+}
